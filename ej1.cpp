@@ -3,21 +3,25 @@
 using namespace std;
 
 int main(){
-    ofstream file;
-    file.open("./lista.txt",ios::out);
+    string var1;
+    ofstream archivo;
+    archivo.open("./1.txt", ios::app);
 
-    file<<"lista:"<<endl;
+    for (int i = 0; i < 10; i++){
+        cout<<"ingrese algo: ";
+        cin>>var1;
 
-    for (int i = 0; i < 10; i++){        
-        string nombre;
-        cout<<"ingrese nombre: ";
-        cin>>nombre;
-
-        if (file.is_open()){
-            file << nombre << ", ";
+        if (i==9){
+            if (archivo.is_open()){
+                archivo << var1 << ".";
+            }
         }
+        else{
+            if (archivo.is_open()){
+                archivo << var1 << ", ";
+            }
+        }
+        
     }
-
-    file.close();
+    archivo.close();
 }
-

@@ -3,18 +3,24 @@
 using namespace std;
 
 int main(){
-    ifstream file1;
-    string busqueda;
-    file1.open("./lista.txt",ios::in);
+    string var1,var2;
+    ofstream archivo;
+    ifstream archivo2;
+    archivo.open("./2.txt", ios::app);
 
-    // string nombre;
-    // cout<<"ingrese nombre que quiere buscar en la lista: ";
-    // cin>>nombre;
-    
-    if (file1.is_open()){
-        file1 >> busqueda;
+    cout<<"ingrese nombre: ";
+    cin>>var1;
+    var2=var1;
+
+    if (archivo.is_open()){
+        archivo << var1;
     }
-    cout << busqueda;
-    file1.close();
-}
+    archivo.close();
 
+     archivo2.open("./2.txt", ios::in);
+     if (archivo2.is_open()){
+         archivo2 >> var2;
+     }
+     cout<<var2;
+     archivo2.close();
+}
